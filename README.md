@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The beeper sound from DOS game music can be translated into Arduino C code. The code example uses it to play the PC Speaker theme from The Secret of Monkey Island. Please note that this was done in back in 2014, and some of the code needs to be revised to work with the latest Arduino IDE (arrays need to be defined using `const uint16_t melody[] PROGMEM`).
+The beeper sound from DOS game music can be translated into Arduino C code. The code example uses it to play the PC Speaker theme from The Secret of Monkey Island. Please note that this was done in back in 2014, and some of the code needs to be revised to work with the latest Arduino IDE (arrays need to be defined using `const uint16_t melody[] PROGMEM` ).
 
 This was originally done to play a prank on a colleague in the office, by hiding a small Arduino chip (ATmega328P) with a a custom circuit board with a beeper inside his desktop PC.
 
@@ -10,7 +10,7 @@ This was originally done to play a prank on a colleague in the office, by hiding
 
 ### The software
 
-The emulator DosBox was used to capture the pc speaker audio to a .wav file. The .wav file was converted to 8 bit signed raw data with Adobe Audition. The raw data file was processed with a Perl script (`readpcm.pl`) to turn the pulses into frequency and note duration data. The frequency and duration data was converted into Arduino C code arrays stored in flash. The Arduino tone() function was used to play the contents of the arrays.
+The emulator DosBox was used to capture the pc speaker audio to a .wav file. The .wav file was converted to 8 bit signed raw data with Adobe Audition. The raw data file was processed with a Perl script ( `readpcm.pl` ) to turn the pulses into frequency and note duration data. The frequency and duration data was converted into Arduino C code arrays stored in flash. The Arduino tone() function was used to play the contents of the arrays.
 
 ### The hardware
 
@@ -21,3 +21,4 @@ The circuit board was powered using the +5v and ground wires from a normal USB c
 ## Demonstration:
 
 There's a video on YouTube that demonstrates the end result: https://youtu.be/6ORsT4Gs9hA
+
