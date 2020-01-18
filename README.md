@@ -14,9 +14,11 @@ The emulator DosBox was used to capture the pc speaker audio to a .wav file. The
 
 ### The hardware
 
+My final solution required a custom circuit board to be made, to fit in a slightly smaller space than a normal Arduino UNO circuit board.
+
 The circuit board uses a 20 MHz crystal, rather than the normal 16 MHz one, because my local electronics shop only had a 20 MHz clock crystal in stock, at the time when I was doing this. This meant that the software had to take the 25% frequency increase into account, or the music would play too fast.
 
-The circuit board was powered using the +5v and ground wires from a normal USB cable. A capacitor needed to be hooked up across +5v and ground to stop the Arduino chip to crash randomly. Apparently the power from a USB connector is often extremely unstable, and using a capacitor (almost any capacity will probably work) will "filter" the power to make it more reliable.
+The power comes from the +5v and ground wires from a normal USB cable. A capacitor needed to be hooked up across +5v and ground to stop the Arduino chip to crash randomly. Apparently the power from a USB connector is often extremely unstable, and using a capacitor (almost any capacity will probably work) will "filter" the power to make it more reliable.
 
 ## Demonstration:
 
