@@ -10,7 +10,9 @@ This was originally done to play a prank on a colleague in the office, by hiding
 
 ### The software
 
-The emulator DosBox was used to capture the pc speaker audio to a .wav file. The .wav file was converted to 8 bit signed raw data with Adobe Audition. The raw data file was processed with a Perl script ( `readpcm.pl` ) to turn the pulses into frequency and note duration data. The frequency and duration data was converted into Arduino C code arrays stored in flash. The Arduino tone() function was used to play the contents of the arrays.
+* The emulator DosBox was used to capture the pc speaker audio to a .wav file.
+* The .wav file was converted to 8 bit signed raw data with Adobe Audition. These days I would probably have used the SoX utility (SoX is easy enough to install in Linux, or in Windows with Chocolatey), with something like this (assuming that your source audio file is called `beeper.wav`): `sox beeper.wav --type raw --rate 44100 --channels 1 --bits 8 --encoding signed-integer beeper_44100_mono_8bit.pcm`
+* The raw data file (44.1 kHz, signed 8 bit, mono) was processed with a Perl script ( `readpcm.pl` ) to turn the pulses into frequency and note duration data. The frequency and duration data was converted into Arduino C code arrays stored in flash. The Arduino tone() function was used to play the contents of the arrays.
 
 ### The hardware
 
