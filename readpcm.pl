@@ -5,13 +5,14 @@ use strict;
 use warnings;
 
 my $sampleRate        = 44100;
-my $speedMultiplier   = 0.8;     # To compensate for uploading to a 16 MHz Arduino but running the program at 20 MHz.
+# my $speedMultiplier   = 0.8;     # 20 MHz Arduino Uno
+my $speedMultiplier   = 1.0;     # 16 MHz Arduino Uno
 my $noteBaseFrequency = 55;
 
 my $fileHandle;
 open( $fileHandle, "<", "circus_1.pcm" );
 local $/;
-my @samples = unpack( "c*", <$fileHandle> );
+my @samples = unpack( "c*", <$fileHandle> );    # Unpack signed 8 bit values
 close $fileHandle;
 
 # Round samples to values 0 and 1.
