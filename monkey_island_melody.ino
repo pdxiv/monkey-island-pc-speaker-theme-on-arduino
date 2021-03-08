@@ -16,10 +16,10 @@ void setup()
   {
     if (pgm_read_word_near(melody + thisNote) > 0)
     {
-      tone(5, pgm_read_word_near(melody + thisNote));
+      tone(9, pgm_read_word_near(melody + thisNote));
     }
     else
-      noTone(5);
+      noTone(9);
     delay(pgm_read_word_near(noteDurations + thisNote));
   }
 }
